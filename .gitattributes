@@ -1,0 +1,6 @@
+# Integrity-pinned viewer files must keep exact original bytes across checkouts.
+viewer/* -text
+# Python modules outside the viewer use a consistent portable LF representation.
+integration/*.py text eol=lf
+tests/*.py text eol=lf
+RUN_OFFLINE_TESTS.py text eol=lf
