@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+.env.*
+.private-muse/
+.local-runs/
+*.log
+*_PRIVATE.bin
+*.key
+*.pem
+*.pfx
+*.mp4
+*.wav
