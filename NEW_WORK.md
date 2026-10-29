@@ -56,3 +56,10 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `tests/test_df037_mock_e2e.py`: eight adversarial browser/API mock-to-decision tests.
 - `demo/server.py`, `demo/index.html`, `demo/ui.js`, `demo/style.css`: local readonly simulated evaluator, never a real Meta inference.
 - `DF037_SIMULATED_DEMO.md`: exact local reproduction and limits.
+
+## DF-040 private owner-capture review — 2026-10-29
+- `integration/df040_capture_projection.py`: competition-only source-checked local private receipt projection; no new Meta API calls.
+- `tests/test_df040_private_capture_review.py`: six reproducible tests using mock receipts, NOT the owner capture.
+- `review/`: localhost-only HTML/CSS/JS/server with fail-closed private capture validation; no raw provider receipt shipped.
+- `DF040_PRIVATE_CAPTURE_REVIEW.md`: explicit replay provenance, capability and IP boundaries.
+- Private DF-039 originals explicitly excluded; actual capture is never pushed to the competition repository.
