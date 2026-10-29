@@ -50,3 +50,9 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `tests/test_df036_demo_evidence_gate.py`: eight new adversarial tests of mock, replay, missing receipts, lock and capture tampering.
 - `DF036_META_DEMO_READINESS.md`: current Meta endpoint specification, evidence modes, explicit restrictions and owner-controlled future single-call checklist.
 - No original client files, API credentials, commercial pre-event code or Meta raw receipts copied. No public release authorization or new license.
+
+## DF-037 simulated evaluator — 2026-10-29
+- `integration/df037_mock_pipeline.py`: original challenge work, simulated extraction processed by real source-match and deterministic decision code.
+- `tests/test_df037_mock_e2e.py`: eight adversarial browser/API mock-to-decision tests.
+- `demo/server.py`, `demo/index.html`, `demo/ui.js`, `demo/style.css`: local readonly simulated evaluator, never a real Meta inference.
+- `DF037_SIMULATED_DEMO.md`: exact local reproduction and limits.
