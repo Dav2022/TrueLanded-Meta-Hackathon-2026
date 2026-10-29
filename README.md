@@ -21,3 +21,6 @@ See `NEW_WORK.md` for per-file provenance and `RELEASE_HOLD.md` for outstanding 
 
 ## Local UI
 `cd viewer && python -B df023m_server.py --port 18970`; open `http://127.0.0.1:18970/`. Local-only review surface, not an internet deployment.
+
+## DF-041 independent evaluator (PRIVATE)
+The audited kit generator is `judge_kit/BUILD_JUDGE_KIT.py`. It builds a commit-pinned, allowlisted ZIP outside this repository, with SHA-256 manifest and its own `RUN_JUDGE_CHECKS.py`. The kit deliberately excludes original DF039 receipts and the historical viewer. It does not authorize publication. See `judge_kit/JUDGES_README.md` and `judge_kit/DF041_RELEASE_MATRIX.md`.

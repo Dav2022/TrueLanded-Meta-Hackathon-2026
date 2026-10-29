@@ -4,3 +4,6 @@ viewer/* -text
 integration/*.py text eol=lf
 tests/*.py text eol=lf
 RUN_OFFLINE_TESTS.py text eol=lf
+# DF041 portability and deterministic ZIP sources.
+judge_kit/*.py text eol=lf
+judge_kit/*.md text eol=lf

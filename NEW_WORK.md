@@ -63,3 +63,13 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `review/`: localhost-only HTML/CSS/JS/server with fail-closed private capture validation; no raw provider receipt shipped.
 - `DF040_PRIVATE_CAPTURE_REVIEW.md`: explicit replay provenance, capability and IP boundaries.
 - Private DF-039 originals explicitly excluded; actual capture is never pushed to the competition repository.
+
+## DF-041 competition-only additions — 2026-10-29
+- `judge_kit/BUILD_JUDGE_KIT.py`: deterministic Git-object allowlisted evaluation bundle constructor, created after start of competition.
+- `judge_kit/VERIFY_JUDGE_KIT.py`: source-bound self-issued SHA-256 verifier; not Meta attestation.
+- `judge_kit/RUN_JUDGE_CHECKS.py`: isolated, credential-sanitizing offline test command.
+- `judge_kit/JUDGES_README.md`: self-contained instructions with strict attribution and licensing boundaries.
+- `judge_kit/DF041_RELEASE_MATRIX.md`: public eligibility gaps and reproducibility evidence.
+- `judge_kit/DF041_DEMO_SCRIPT_TECHNICAL.md`: non-final private narration outline, not an approved video.
+- `tests/test_df041_judge_kit.py`: six explicit packaging security tests (kept in development repo, not in public evaluation ZIP).
+- No model response, customer evidence, commercial trade engine or previous private receipt is included in the independent ZIP.
