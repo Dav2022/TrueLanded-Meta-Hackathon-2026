@@ -44,3 +44,9 @@ The `integration/` code derives from an **independent challenge worktree** with 
 
 ## Open owner approvals
 The original author/contributor list, model-output redistribution terms, trademark use, any third-party snippets, license and organizer rules must be confirmed before public release. No public grant follows from this inventory.
+
+## DF-036 additions — 2026-10-29
+- `integration/df036_demo_evidence_gate.py`: original competition-only, offline private-capture classifier and local integrity gate; created during DF-036. Not a Meta provider attestation.
+- `tests/test_df036_demo_evidence_gate.py`: eight new adversarial tests of mock, replay, missing receipts, lock and capture tampering.
+- `DF036_META_DEMO_READINESS.md`: current Meta endpoint specification, evidence modes, explicit restrictions and owner-controlled future single-call checklist.
+- No original client files, API credentials, commercial pre-event code or Meta raw receipts copied. No public release authorization or new license.
