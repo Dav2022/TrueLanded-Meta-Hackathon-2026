@@ -73,3 +73,11 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `judge_kit/DF041_DEMO_SCRIPT_TECHNICAL.md`: non-final private narration outline, not an approved video.
 - `tests/test_df041_judge_kit.py`: six explicit packaging security tests (kept in development repo, not in public evaluation ZIP).
 - No model response, customer evidence, commercial trade engine or previous private receipt is included in the independent ZIP.
+
+## DF-042 — eligibility, publication and intellectual-property review — 2026-10-29
+- Public GitHub API previously verified competition repository creation at `2026-10-29T21:36:51Z` (29 Oct, 15:36:51 Costa Rica); this metadata is not backdated.
+- `docs/competition/DF042_RULES_EVIDENCE_MATRIX.md`: participant-guide rule references, live public organizer sources, accepted waiver unresolved.
+- `docs/competition/DF042_IP_RIGHTS_AND_HISTORY_REVIEW.md`: protected commercial origin, no-license risk, Git history including old derived viewer.
+- `docs/competition/DF042_SUBMISSION_READINESS.md`: draft fields, decision gates and exact demo distinction.
+- `scripts/df042_release_preflight.py`: conservative read-only NO-GO gate; it never publishes, writes a license or forces Git history.
+- `tests/test_df042_release_preflight.py`: nine fail-closed release-check tests.
