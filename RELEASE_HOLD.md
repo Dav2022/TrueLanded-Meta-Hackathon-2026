@@ -8,3 +8,5 @@
 - Keep unpublished until owner authorizes publishing after independent rights/security checks.
 
 DF041: The private independent evaluation ZIP is NOT a license or public submission. A successful offline test is not proof of live Muse inference. Human approval of rules, code rights, output redistribution and publication remains mandatory.
+
+DF043: `docs/` browser evidence is a **SIMULATED** static product view. A private one-shot Muse API request was completed separately in DF039. Do not describe this website as a new live Muse execution, include private receipts, or enable GitHub Pages until license, rights, organizer rules and explicit owner publication GO are recorded.

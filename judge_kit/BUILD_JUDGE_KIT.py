@@ -27,10 +27,11 @@ TESTS = (
     "test_df023l_offline_observability.py", "test_df025_muse_cli.py",
     "test_df025_muse_integration_e2e.py", "test_df026_independent_oracle.py",
     "test_df036_demo_evidence_gate.py", "test_df037_mock_e2e.py",
-    "test_df040_private_capture_review.py",
+    "test_df040_private_capture_review.py", "test_df043_static_site.py",
 )
 DEMO = ("index.html", "server.py", "style.css", "ui.js")
 REVIEW = ("index.html", "server.py", "style.css", "ui.js")
+STATIC_SITE = ("index.html", "style.css", "app.js", "data.json")
 DOCUMENTS = ("NEW_WORK.md", "RELEASE_HOLD.md", "DF036_META_DEMO_READINESS.md",
              "DF037_SIMULATED_DEMO.md", "DF040_PRIVATE_CAPTURE_REVIEW.md")
 FILES = {
@@ -38,6 +39,8 @@ FILES = {
     **{"tests/" + name: "tests/" + name for name in TESTS},
     **{"demo/" + name: "demo/" + name for name in DEMO},
     **{"review/" + name: "review/" + name for name in REVIEW},
+    **{"docs/" + name: "docs/" + name for name in STATIC_SITE},
+    "scripts/df043_build_static_site.py": "scripts/df043_build_static_site.py",
     **{name: name for name in DOCUMENTS},
     "README.md": "judge_kit/JUDGES_README.md",
     "RUN_JUDGE_CHECKS.py": "judge_kit/RUN_JUDGE_CHECKS.py",

@@ -32,3 +32,6 @@ or claiming an offline mock is fresh Meta inference.
 
 The kit can be shared only after an explicit separate determination of
 licensing, legal rights, event rules and user authorization.
+
+## DF-043 independent visual walkthrough
+The allowlisted evaluation ZIP now includes `docs/` for a responsive static experience that can be deployed later via GitHub Pages. This is an offline **synthetic** example with browser SHA checks and clearly marked zero Meta calls. Publishing it requires the same owner approval/licensing gates as the repository.

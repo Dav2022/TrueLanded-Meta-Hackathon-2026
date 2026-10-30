@@ -1,66 +1,71 @@
-# TrueLanded DF-041 — Independent Judge Evaluation Kit
+# TrueLanded | Evidence-to-Decision Engine
 
-**Status: prepared for private technical review, NOT approved for public distribution.**
-**Category:** Indie Developer · Meta Global AI Developer Hackathon 2026.
-**Runtime:** Python 3.11+ standard library and a modern browser; no packages to install.
+> **The document changed. The decision should too.**
 
-## A. Reproduce without credentials, Internet or private materials
+**Meta Global AI Developer Hackathon 2026 · Indie Developer · Build for Your World**
 
-Extract this ZIP into an empty folder, open a terminal there, then run:
+TrueLanded helps international-trade professionals answer a practical question: **when commercial documents disagree, which evidence should they request next—and what will change when it arrives?**
 
-Windows: 'py -3.11 -B RUN_JUDGE_CHECKS.py'
-Linux/macOS: 'python3 -B RUN_JUDGE_CHECKS.py'
+Rather than presenting an LLM's output as a customs verdict, TrueLanded separates **candidate extraction with Meta Muse Spark 1.3** from **deterministic verification, evidence planning and human review**.
 
-The check verifies every allowlisted byte using the **owner-issued** SHA-256 manifest, then
-runs the synthetic source, deterministic planner, security, model-response-shape,
-and local HTTP tests. **No Meta inference occurs during this test.**
-Expected success marker: DF041_INDEPENDENT_OFFLINE_ACCEPTANCE_PASS_MODEL_CALLS_0.
+**Release status:** private technical evaluation candidate. Publication rights and a compatible code license remain subject to the owner's explicit approval.
 
-To inspect the three-stage simulated demonstration:
+## The three differentiators
 
-'python3 -B demo/server.py --port 18971'
+| Capability | What you can observe | What it does **not** claim |
+| --- | --- | --- |
+| **Evidence Spotlight** | Exact fictional invoice/packing lines, source SHA-256 anchors and fail-closed literal verification | Authentication of a document issuer |
+| **Next Best Proof** | The highest-ranked request for missing or contradictory documentary evidence | A binding customs or tariff determination |
+| **Counterfactual Cascade** | How a revised document resolves one discrepancy while exposing another | That a real supplier accepted a correction |
 
-On Windows, 'py -3.11 -B demo/server.py --port 18971' also works.
-Open http://127.0.0.1:18971/ **on that computer**. It is read-only and
-local; SIMULATED_OFFLINE_NOT_META_INFERENCE is always displayed.
+The demo shows three hypothetical source updates: a packing reconciliation, an invoice that introduces a value discrepancy, and a corrected invoice that leaves the technical specification outstanding.
 
-## B. Evaluate the functionality
+## See the interactive experience
 
-1. **Evidence Spotlight** — the fictional source lines and their SHA-256 anchors.
-2. **Next Best Proof** — ranks what evidence to request after each source change.
-3. **Counterfactual Cascade** — a fictional packing revision, inconsistent invoice
-   and corrected invoice progressively change the unresolved obligations.
+The **static browser demo** lives in `docs/`. It runs entirely on the viewer's machine with **no Meta key, server application, Python package installation or billed model call**. From an extracted folder:
 
-The local mock is a test double with the expected Muse Spark 1.3 API response
-contract. TrueLanded checks exact quoted lines, rejects fabricated quotes and
-recomputes the proof selection in independent deterministic code. It **does not
-claim** that the mock is a Meta response.
+```powershell
+# Windows
+cd docs
+py -3.11 -B -m http.server 18973 --bind 127.0.0.1
+```
 
-## C. Optional genuine Meta execution (not needed for offline evaluation)
+Or on Linux/macOS: `cd docs && python3 -m http.server 18973 --bind 127.0.0.1`.
 
-If you have **your own authorized Meta Model API access**, you can inspect
-'integration/muse_cli.py' and the private read-only replay
-'review/server.py'. That is an explicit, potentially billable, one-attempt
-workflow. It requires the operator to provide their own MODEL_API_KEY,
-create a private directory **outside this bundle** and authorize each operation.
-Never add any credential or captured response to this ZIP or a public repo.
-An offline replay cannot establish the provider's origin by itself.
+Open **http://127.0.0.1:18973/**. Select each of the three stages to inspect the source, next documentary proof and newly opened/resolved obligations. The browser hashes every fictional source before displaying its results. It refuses display when the checks fail.
 
-The project owner previously performed one authorized request to
-'muse-spark-1.3' yielding HTTP 200 and 18/18 source-literal matches.
-The original response body and local receipts are **not included** in this kit.
-Without a separate authorized receipt, 'review/server.py' must fail closed.
+If a public GitHub Pages site is activated later from the `/docs` directory, the same static experience can run over HTTPS without server-side secrets. **No deployment or publication has been authorized in the current private release.**
 
-## D. What this DOES NOT prove
+## Reproduce the engineering independently
 
-- No actual trade clearance, tax classification, issuer authenticity, customer PDFs
-  or regulatory decision is verified in this fictional demonstration.
-- Hashes and this manifest are **self-issued**, not signatures by Meta or suppliers.
-- The offline mock does not authenticate Muse inference.
-- A reviewer without their own Meta credentials cannot reproduce the *live*
-  model execution merely from the ZIP.
-- Access and redistribution rights, the final public license and official rules
-  require separate human review. This private bundle is not a publication license.
+Requirements: **Python 3.11+ standard library**; no external Python dependencies and no credentials.
 
-See NEW_WORK.md for provenance and RELEASE_HOLD.md for outstanding rights.
-MANIFEST.json names the exact source commit and every included byte.
+```bash
+python3 -B RUN_JUDGE_CHECKS.py
+```
+
+On Windows: `py -3.11 -B RUN_JUDGE_CHECKS.py`.
+
+The runner first verifies **every included file against a self-issued SHA-256 manifest**, then runs source-matching, independent-oracle, deterministic decision, local HTTP and security tests, including the static-site fixture generator. It makes **zero provider calls**. The manifest is not a signature by Meta.
+
+To verify that the static data was generated from TrueLanded's actual deterministic code:
+
+```bash
+python3 -B scripts/df043_build_static_site.py --check
+```
+
+A second local server-style simulated demo is also available: `python3 -B demo/server.py --port 18971`.
+
+## Where Meta AI actually participates
+
+- **Live authenticated experiment (DF-039):** the owner executed a single authenticated Muse Spark 1.3 Chat Completions call using three newly generated fictional plaintext documents. The response was HTTP **200**; TrueLanded checked **18/18 exact source literals**. It reported 684 prompt, 1,290 completion and 1,974 total tokens. The raw provider response and API credentials are **not included** in this evaluation package.
+- **Independent offline version (this repository):** uses a **clearly marked local test double** with the Muse Spark 1.3 response shape, then routes the candidates through the same exact-line checks and deterministic planning code. The static page and offline tests **do not make a Meta inference**.
+- **Optional independent live test:** `integration/muse_cli.py` implements an explicit **one potentially billable call** with a private one-shot lock, strict model allowlist and no retries. It requires the evaluator's own authorized `MODEL_API_KEY`, deliberate flags and a private folder **outside this repository**. It must never run as the default judge command.
+
+## Source code and provenance
+
+`integration/` contains candidate extraction and deterministic evidence planning; `tests/` contains adversarial and independent-oracle checks; `docs/` contains the client-side demonstration; `demo/` and `review/` contain distinct localhost servers for a mock scene and authorized private-capture replay, respectively. `NEW_WORK.md` identifies contest-only work and provenance. The prior commercial TrueLanded product is not distributed.
+
+This is a **fictional proof-of-concept**: no customer files, customs clearance, document issuer authentication, real PDF OCR validation or automated regulator communication. Humans remain responsible for every operational decision.
+
+**Independent technical checks ≠ official eligibility or license sign-off.** The participant guide and accepted Official Rules determine submission requirements; the owner must approve rights and publication separately.

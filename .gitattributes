@@ -7,3 +7,10 @@ RUN_OFFLINE_TESTS.py text eol=lf
 # DF041 portability and deterministic ZIP sources.
 judge_kit/*.py text eol=lf
 judge_kit/*.md text eol=lf
+
+# DF043 site and generator portable bytes.
+docs/*.html text eol=lf
+docs/*.css text eol=lf
+docs/*.js text eol=lf
+docs/*.json text eol=lf
+scripts/df043_build_static_site.py text eol=lf

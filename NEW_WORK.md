@@ -85,3 +85,11 @@ The original author/contributor list, model-output redistribution terms, tradema
 ## DF-042 reproducibility hardening — 2026-10-29
 - `judge_kit/VERIFY_JUDGE_KIT.py`: now ignores only ordinary top-level Git metadata in a clean checkout while rejecting unexpected files, symlinks and altered allowlisted bytes.
 - `tests/test_df041_judge_kit.py`: regression covering verification from a Git checkout and refusal of an extra unlisted file.
+
+## DF-043 — jury-ready interface and submission preparation (2026-10-29)
+- `docs/index.html`, `docs/style.css`, `docs/app.js`, `docs/data.json`: new responsive static decision/evidence viewer; it is an **offline mock** with browser-side source SHA verification, no API credentials, no Meta inference.
+- `scripts/df043_build_static_site.py`: builds the exact static JSON from TrueLanded deterministic simulated evidence; `--check` verifies there is no drift.
+- `tests/test_df043_static_site.py`: six tests of data determinism, exact source hashes, false-attribution rejection, basic HTTP delivery and privacy.
+- `judge_kit/BUILD_JUDGE_KIT.py` and `judge_kit/JUDGES_README.md`: adjusted to carry the static site, generator and test in the allowlisted ZIP, with accessible judge documentation.
+- `docs/competition/DF043_SUBMISSION_COPY_PRIVATE.md`, `DF043_VIDEO_RUN_OF_SHOW_PRIVATE.md`, `DF043_RELEASE_DECISION_CARD_PRIVATE.md`: private templates/decision records; not included in the standalone jury ZIP.
+- No real client documents, live Meta receipt, provider tokens, historical viewer, commercial source or automatic publication introduced.
