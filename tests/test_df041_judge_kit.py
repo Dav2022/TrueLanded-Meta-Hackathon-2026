@@ -56,5 +56,33 @@ class DF041SourceBundleTests(unittest.TestCase):
         self.assertFalse(any(name.startswith(".local-runs") for name in builder.FILES))
 
 
+    def test_clean_git_checkout_is_verifiable_but_extra_file_is_rejected(self):
+        from hashlib import sha256
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            entries = {}
+            for i in range(20):
+                name = f"sample_{i:02}.txt"
+                raw = f"fictional {i}".encode("utf8")
+                (root / name).write_bytes(raw)
+                entries[name] = {"sha256": sha256(raw).hexdigest(), "bytes": len(raw)}
+            meta = root / ".git"
+            meta.mkdir()
+            (meta / "HEAD").write_text("ref: refs/heads/main\n", encoding="utf8")
+            manifest = {
+                "schema": "DF041_JUDGE_KIT_ALLOWLIST_SHA256_V1",
+                "mode": "PRIVATE_REPRODUCIBILITY_REVIEW_NOT_PUBLIC_RELEASE",
+                "evidence": "SYNTHETIC_OFFLINE_NO_MODEL_CALL",
+                "private_model_receipts_included": False,
+                "provider_signed": False,
+                "redistribution_authorized": False,
+                "manifest_issued_by": "TRUELANDED_OWNER_LOCAL_BUILD_NOT_META",
+                "files": entries,
+            }
+            (root / "MANIFEST.json").write_text(json.dumps(manifest), encoding="utf8")
+            self.assertEqual(verifier.verify(root)["files_verified"], 20)
+            (root / "unlisted.txt").write_text("not declared", encoding="utf8")
+            with self.assertRaisesRegex(verifier.BundleRefusal, "EXTRA_OR_MISSING_FILE"):
+                verifier.verify(root)
 if __name__ == "__main__":
     unittest.main()

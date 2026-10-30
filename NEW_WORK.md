@@ -81,3 +81,7 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `docs/competition/DF042_SUBMISSION_READINESS.md`: draft fields, decision gates and exact demo distinction.
 - `scripts/df042_release_preflight.py`: conservative read-only NO-GO gate; it never publishes, writes a license or forces Git history.
 - `tests/test_df042_release_preflight.py`: nine fail-closed release-check tests.
+
+## DF-042 reproducibility hardening — 2026-10-29
+- `judge_kit/VERIFY_JUDGE_KIT.py`: now ignores only ordinary top-level Git metadata in a clean checkout while rejecting unexpected files, symlinks and altered allowlisted bytes.
+- `tests/test_df041_judge_kit.py`: regression covering verification from a Git checkout and refusal of an extra unlisted file.

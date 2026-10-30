@@ -38,6 +38,11 @@ def verify(root: Path) -> dict:
     expected = set(files) | {"MANIFEST.json"}
     actual = set()
     for item in root.rglob("*"):
+        relative = item.relative_to(root)
+        if relative.parts[0] == ".git":
+            if relative.parts == (".git",) and item.is_symlink():
+                raise BundleRefusal("SYMLINK_GIT_METADATA_REFUSED")
+            continue  # Git metadata exists in a clone, unlike an extracted ZIP.
         if item.is_symlink():
             raise BundleRefusal("SYMLINK_REFUSED")
         if item.is_file():

@@ -44,3 +44,6 @@
 ## Aprobación de publicación
 
 **NO-GO** hasta que todo: [licencia y derechos], [texto auténtico de reglas], [historial sin material reservado], [repo anónimo accesible], [video listo], [formulario confirmado].
+
+## Review after DF-042 checkout fix
+The independently manifested kit verifier supports both an extracted ZIP and a Git checkout containing the ordinary `.git` metadata directory. All other unexpected files are rejected. Check this property again after a true remote cold clone.
