@@ -93,3 +93,18 @@ The original author/contributor list, model-output redistribution terms, tradema
 - `judge_kit/BUILD_JUDGE_KIT.py` and `judge_kit/JUDGES_README.md`: adjusted to carry the static site, generator and test in the allowlisted ZIP, with accessible judge documentation.
 - `docs/competition/DF043_SUBMISSION_COPY_PRIVATE.md`, `DF043_VIDEO_RUN_OF_SHOW_PRIVATE.md`, `DF043_RELEASE_DECISION_CARD_PRIVATE.md`: private templates/decision records; not included in the standalone jury ZIP.
 - No real client documents, live Meta receipt, provider tokens, historical viewer, commercial source or automatic publication introduced.
+
+
+## DF-071 — competition remediation on private branch (2026-10-31)
+**Source branch:** `df071-remediation-private`, forked from public-release-blocked commit `0f189046fd5b595d02e1cbfb6642d386124999e0`. This section is an authorship/provenance inventory, NOT a license grant.
+
+- `docs/counterfactual.js`: new independent browser-side **fictional** numeric what-if calculation; deterministic integer-cent arithmetic, no API calls, no original document edits.
+- `docs/app.js`: modified to independently recompute a pinned cross-source SHA-256 index, gate display on exact literal verification and expose the hypothetical calculator.
+- `docs/index.html`, `docs/style.css`: bounded interactive panel, source-line highlight and accessibility styling; highlighting text lines is **not** a Muse PDF region claim.
+- `tests/test_df071_counterfactual.cjs`: new independent pure logic adversarial tests.
+- `tests/test_df071_browser_contract.cjs`: new mock-DOM + actual WebCrypto regression for source-index and line tampering.
+- `tests/test_df043_static_site.py`, `judge_kit/BUILD_JUDGE_KIT.py`: updated allowlist and regression for new browser module.
+- `.github/workflows/df071-offline.yml`: new restricted-read CI for Python 3.11 and Node 22, Windows and Linux, plus isolated extracted Judge Kit reproduction.
+- `README.md`, `docs/competition/DF071_REMEDIATION_STATUS_PRIVATE.md`, `docs/competition/DF071_VIDEO_NARRATION_DRAFT_PRIVATE.md`: updated setup, gates, formal change log and **unrecorded** narration draft.
+
+No local DF-069/DF-070 source has been copied, inspected or modified from this GitHub chat workflow; it must be reconciled separately using an authorized local Work session. No commercial TrueLanded code, customers, model secrets or provider receipts intentionally introduced. Do not publicize this repository or its existing historical Git objects without permission and independent security/rights review.
