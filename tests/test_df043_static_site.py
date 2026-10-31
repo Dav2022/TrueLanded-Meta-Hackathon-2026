@@ -42,7 +42,7 @@ class DF043SiteTests(unittest.TestCase):
         self.assertFalse(data["private_receipt_included"])
         self.assertEqual(data["model_candidate_source"], "LOCAL_TEST_DOUBLE_NOT_META")
         self.assertEqual(data["mode"], "SIMULATED_OFFLINE_NOT_META_INFERENCE")
-        for filename in ("index.html", "app.js", "style.css", "data.json"):
+        for filename in ("index.html", "app.js", "counterfactual.js", "style.css", "data.json"):
             text = (SITE / filename).read_text("utf8")
             self.assertNotIn("LLM_", text)
             self.assertNotIn("github_pat_", text)
@@ -60,6 +60,17 @@ class DF043SiteTests(unittest.TestCase):
         self.assertNotIn("https://", script)
         self.assertNotIn("fetch('http", script)
         self.assertIn("SOURCE_SHA256_MISMATCH", script)
+        self.assertIn("SOURCE_INDEX_SHA256_MISMATCH", script)
+        self.assertIn("verified_source_index_sha256", script)
+        self.assertIn("renderWhatIf", script)
+        from hashlib import sha256 as digest
+        scene = json.loads((SITE / "data.json").read_text("utf8"))
+        index = "".join(s["event_id"] + "\n" + s["source_sha256"] + "\n"
+                        for s in scene["stages"])
+        self.assertEqual(digest(index.encode("utf8")).hexdigest(),
+                         "a0cc3282929ff0e67958ee27901016c7bcd21fd857d06796e3fa7d220e677ecc")
+        self.assertIn("counterfactual.js", html if False else
+                      (SITE / "index.html").read_text("utf8"))
         html = (SITE / "index.html").read_text("utf8")
         self.assertIn("Content-Security-Policy", html)
         self.assertIn("SIMULATED", html)
@@ -75,7 +86,7 @@ class DF043SiteTests(unittest.TestCase):
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
         try:
-            for path in ("/", "/index.html", "/style.css", "/app.js", "/data.json"):
+            for path in ("/", "/index.html", "/style.css", "/app.js", "/counterfactual.js", "/data.json"):
                 with self.subTest(path=path):
                     with urlopen(f"http://127.0.0.1:{server.server_port}{path}",
                                  timeout=4) as response:
@@ -88,7 +99,7 @@ class DF043SiteTests(unittest.TestCase):
 
     def test_static_site_contains_no_private_pdf_or_historical_replay(self):
         names = sorted(x.name for x in SITE.iterdir() if x.is_file())
-        self.assertEqual(names, ["app.js", "data.json", "index.html", "style.css"])
+        self.assertEqual(names, ["app.js", "counterfactual.js", "data.json", "index.html", "style.css"])
 
 
 if __name__ == "__main__":
