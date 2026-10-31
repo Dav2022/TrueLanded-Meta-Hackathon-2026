@@ -31,7 +31,7 @@ TESTS = (
 )
 DEMO = ("index.html", "server.py", "style.css", "ui.js")
 REVIEW = ("index.html", "server.py", "style.css", "ui.js")
-STATIC_SITE = ("index.html", "style.css", "app.js", "data.json")
+STATIC_SITE = ("index.html", "style.css", "app.js", "counterfactual.js", "data.json")
 DOCUMENTS = ("NEW_WORK.md", "RELEASE_HOLD.md", "DF036_META_DEMO_READINESS.md",
              "DF037_SIMULATED_DEMO.md", "DF040_PRIVATE_CAPTURE_REVIEW.md")
 FILES = {
