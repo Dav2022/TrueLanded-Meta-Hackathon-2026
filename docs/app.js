@@ -90,7 +90,14 @@
     });
     $("doc-label").textContent=STAGES[index][1].toUpperCase();
     const lines=$("source-lines");lines.replaceChildren();
-    for (const line of s.source_lines) lines.append(el("li",line));
+    for (const line of s.source_lines) {
+      const item = el("li", line);
+      if (/^(PACKED QUANTITY|QUANTITY|UNIT PRICE|LINE TOTAL): /.test(line)) {
+        item.className = "source-literal-focus";
+        item.title = "Exact local source literal, not a Muse PDF bounding-box prediction";
+      }
+      lines.append(item);
+    }
     $("source-sha").textContent=s.source_sha256;
     $("literal-match").textContent=s.literal_matches+" / "+EXPECTED_COUNTS[index];
     $("next-proof").textContent=friendly[s.next_best_proof]||s.next_best_proof;
