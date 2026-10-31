@@ -1,6 +1,8 @@
 "use strict";
 (() => {
   const $ = id => document.getElementById(id);
+  // Pinned to the three fictional source linesets, not a signature from Meta or any issuer.
+  const EXPECTED_SOURCE_INDEX_SHA256 = "a0cc3282929ff0e67958ee27901016c7bcd21fd857d06796e3fa7d220e677ecc";
   const STAGES = [
     ["PACKING_NEW", "Packing record", "Quantity mismatch"],
     ["INVOICE_REVISED_INCONSISTENT", "Invoice revision A", "Value mismatch"],
@@ -63,6 +65,12 @@
         throw Error("UNSAFE_OR_MISSING_LITERAL");
       if (await sourceSha(s.source_lines)!==s.source_sha256) throw Error("SOURCE_SHA256_MISMATCH");
     }
+    // Bind all three independently checked source hashes to one committed index.
+    // This is a local integrity commitment, NOT an issuer or provider signature.
+    const index = doc.stages.map(s => s.event_id + "\n" + s.source_sha256 + "\n").join("");
+    const indexHash = hex(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(index)));
+    if (indexHash !== EXPECTED_SOURCE_INDEX_SHA256) throw Error("SOURCE_INDEX_SHA256_MISMATCH");
+    doc.verified_source_index_sha256 = indexHash;
     return doc;
   }
   function renderPills(targetId,values,cls) {
@@ -89,7 +97,39 @@
     renderPills("open-obligations",s.open_obligations,"negative");
     renderPills("newly-exposed",s.newly_exposed,"negative");
     renderPills("reconciled",s.conditionally_reconciled,"positive");
-    $("trace-hash").textContent="SOURCE PACK SHA-256: "+payload.source_pack_sha256;
+    $("trace-hash").textContent="VERIFIED FICTIONAL SOURCE INDEX SHA-256: "+payload.verified_source_index_sha256;
+  }
+  function renderWhatIf() {
+    const result = $("hyp-result");
+    result.replaceChildren();
+    if (!payload || !globalThis.TrueLandedCounterfactual) {
+      result.append(el("p", "Hypothetical calculation unavailable: source not verified."));
+      return;
+    }
+    try {
+      const output = globalThis.TrueLandedCounterfactual.calculate(
+        payload, $("hyp-quantity").value, $("hyp-total").value.trim()
+      );
+      result.className = "hyp-result good";
+      const intro = el("p", "RECALCULATED HYPOTHESIS · NOT A SOURCE DOCUMENT", "hyp-kicker");
+      const math = el("p", output.quantity + " × $" + output.unit_price_usd +
+        " = $" + output.computed_total_usd + " · proposed line total $" +
+        output.proposed_total_usd);
+      const advice = el("p", "Next proof: " +
+        (friendly[output.next_best_proof] || output.next_best_proof));
+      const open = el("p", "Open: " +
+        output.open_obligations.map(x => friendly[x] || x).join(" · "));
+      const changed = el("p", "New: " +
+        (output.newly_exposed.map(x => friendly[x] || x).join(", ") || "none") +
+        " · Conditionally reconciled: " +
+        (output.conditionally_reconciled.map(x => friendly[x] || x).join(", ") || "none"));
+      const scope = el("p", "Fictional browser calculation only · source unchanged · no Meta call · human review required.", "hyp-scope");
+      result.append(intro, math, advice, open, changed, scope);
+    } catch (error) {
+      result.className = "hyp-result fail";
+      result.append(el("p", "REFUSED: " +
+        (error instanceof Error ? error.message : "INVALID_HYPOTHESIS")));
+    }
   }
   function block(reason) {
     payload=null;
@@ -118,6 +158,14 @@
       $("validation").className="validation good";
       $("validation").textContent="18/18 SYNTHETIC SOURCE LITERALS VERIFIED";
       renderStage(0);
+      if (!globalThis.TrueLandedCounterfactual) throw Error("HYPOTHETICAL_ENGINE_MISSING");
+      $("hyp-apply").addEventListener("click", renderWhatIf);
+      $("hyp-reset").addEventListener("click", () => {
+        $("hyp-quantity").value = "28";
+        $("hyp-total").value = "235.06";
+        renderWhatIf();
+      });
+      renderWhatIf();
     } catch(e) { block(e instanceof Error ? e.message : "UNKNOWN_SOURCE_ERROR"); }
   }
   load();
