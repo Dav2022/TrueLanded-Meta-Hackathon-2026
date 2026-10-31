@@ -69,8 +69,7 @@ class DF043SiteTests(unittest.TestCase):
                         for s in scene["stages"])
         self.assertEqual(digest(index.encode("utf8")).hexdigest(),
                          "a0cc3282929ff0e67958ee27901016c7bcd21fd857d06796e3fa7d220e677ecc")
-        self.assertIn("counterfactual.js", html if False else
-                      (SITE / "index.html").read_text("utf8"))
+        self.assertIn("counterfactual.js", (SITE / "index.html").read_text("utf8"))
         html = (SITE / "index.html").read_text("utf8")
         self.assertIn("Content-Security-Policy", html)
         self.assertIn("SIMULATED", html)
