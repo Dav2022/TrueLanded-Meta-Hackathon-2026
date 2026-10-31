@@ -15,3 +15,5 @@
 .hyp-result .hyp-kicker{font-weight:800;letter-spacing:.12em;font-size:11px;color:#79e5d4}
 .hyp-result .hyp-scope{color:#f1cbaa;font-size:11px}
 @media(max-width:670px){.hyp-workbench{padding:20px}.hyp-controls{display:grid;grid-template-columns:1fr}.hyp-controls input{width:100%}}
+
+.doc-paper li.source-literal-focus{background:#123c44;border-left:3px solid #2fe1d0;padding:7px 9px;color:#f4fffc;border-radius:3px}
