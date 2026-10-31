@@ -8,6 +8,7 @@
 <meta name="description" content="TrueLanded: source-grounded documentary evidence planning. A synthetic interactive demo of Evidence Spotlight, Next Best Proof and Counterfactual Cascade.">
 <title>TrueLanded — From Documents to Defensible Decisions</title>
 <link rel="stylesheet" href="style.css">
+<script src="counterfactual.js" defer></script>
 <script src="app.js" defer></script>
 </head>
 <body>
@@ -46,6 +47,21 @@
 <article class="panel cascade-panel"><div class="panel-head"><span class="panel-index purple">03</span><div><p class="panel-kicker">COUNTERFACTUAL CASCADE</p><h3>What changed with this revision?</h3></div></div><div class="delta-grid"><div><span class="delta-heading">NEW UNCERTAINTY</span><div id="newly-exposed" class="pills"></div></div><div><span class="delta-heading">CONDITIONALLY RECONCILED</span><div id="reconciled" class="pills"></div></div></div><p class="human">◉ Human review remains mandatory. Source issuer is not authenticated.</p></article>
 </div>
 </div>
+<section class="hyp-workbench" aria-label="Calculate a new fictional invoice hypothesis">
+<div>
+<p class="eyebrow">TRY A NEW HYPOTHESIS · NO MODEL API CALL</p>
+<h3>What if the invoice numbers changed?</h3>
+<p>Change the fictional invoice quantity or total. The browser recalculates which contradictions remain, which proof is needed next and what changed. This does not modify any original source.</p>
+</div>
+<div class="hyp-controls">
+<label for="hyp-quantity">Hypothetical quantity (PCS)<input id="hyp-quantity" type="number" inputmode="numeric" min="1" max="999" step="1" value="28"></label>
+<label for="hyp-total">Hypothetical invoice line total (USD)<input id="hyp-total" type="text" inputmode="decimal" maxlength="9" value="235.06" aria-describedby="hyp-format"></label>
+<span id="hyp-format" class="hyp-hint">Use a dot and exactly two decimals, e.g. 221.76.</span>
+<button id="hyp-apply" type="button" class="cta primary">Recalculate fictional decision</button>
+<button id="hyp-reset" type="button" class="cta secondary">Reset hypothesis</button>
+</div>
+<div id="hyp-result" class="hyp-result" role="status" aria-live="polite">Verifying fictional source before calculation…</div>
+</section>
 <div class="case-footer"><div><span class="eyebrow">TRANSPARENCY</span><p>The model's role is candidate text extraction. <strong>The source match, prioritization and obligation changes come from TrueLanded's deterministic code.</strong></p></div><div class="trace" id="trace-hash">NO UNVERIFIED DATA DISPLAYED</div></div>
 </section>
 <section class="method" id="trust"><div class="method-head"><p class="eyebrow">WHY THIS IS DIFFERENT</p><h2>Trust isn't a claim.<br><span>It's a test you can rerun.</span></h2></div><div class="method-grid"><div class="method-card"><span>01 / EXTRACT</span><h3>Model proposes</h3><p>Meta Muse Spark 1.3 supplies candidate literal fields in the verified API path. This website shows an offline test double—not a live request.</p></div><div class="method-card"><span>02 / VERIFY</span><h3>Sources decide</h3><p>Exact source text, line anchors and SHA-256 checks fail closed if claims do not match the fictional documents.</p></div><div class="method-card"><span>03 / PLAN</span><h3>Human retains control</h3><p>Ranked documentary requirements and hypothetical resolution changes assist review. No automatic filing or legal authorization.</p></div></div></section>
