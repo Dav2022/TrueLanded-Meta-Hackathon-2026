@@ -32,6 +32,19 @@ jobs:
         run: python -B scripts/df043_build_static_site.py --check
       - name: Independent browser counterfactual tests
         run: node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs
+      - name: Clean extracted Judge Kit acceptance, no network
+        shell: python
+        run: |
+          import pathlib, subprocess, sys, tempfile, zipfile
+          with tempfile.TemporaryDirectory(prefix="df071-judge-") as tmp:
+              archive = pathlib.Path(tmp) / "judge.zip"
+              dest = pathlib.Path(tmp) / "extracted"
+              subprocess.run([sys.executable, "-B", "judge_kit/BUILD_JUDGE_KIT.py",
+                              "--output", str(archive)], check=True)
+              with zipfile.ZipFile(archive) as bundle:
+                  bundle.extractall(dest)
+              subprocess.run([sys.executable, "-B", "RUN_JUDGE_CHECKS.py"],
+                             cwd=dest, check=True)
       - name: Offline release preflight (expected NO-GO)
         shell: python
         run: |
