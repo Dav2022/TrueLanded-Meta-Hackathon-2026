@@ -31,7 +31,7 @@ jobs:
       - name: Verify checked-in static scene is deterministic
         run: python -B scripts/df043_build_static_site.py --check
       - name: Independent browser counterfactual tests
-        run: node --test tests/test_df071_counterfactual.cjs
+        run: node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs
       - name: Offline release preflight (expected NO-GO)
         shell: python
         run: |
