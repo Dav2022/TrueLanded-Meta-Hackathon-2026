@@ -1,0 +1,45 @@
+name: DF-071 offline acceptance
+on:
+  push:
+    branches: [df071-remediation-private]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline:
+    name: Reproducible source and browser checks
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Offline Python regression suite
+        run: python -B RUN_OFFLINE_TESTS.py
+      - name: Verify checked-in static scene is deterministic
+        run: python -B scripts/df043_build_static_site.py --check
+      - name: Independent browser counterfactual tests
+        run: node --test tests/test_df071_counterfactual.cjs
+      - name: Offline release preflight (expected NO-GO)
+        shell: python
+        run: |
+          import json, subprocess, sys
+          p = subprocess.run([sys.executable, "-B", "scripts/df042_release_preflight.py"],
+                             capture_output=True, text=True)
+          print("release_preflight_exit_code", p.returncode)
+          print("release_preflight_stdout", p.stdout[:2000])
+          print("release_preflight_stderr", p.stderr[:1000])
+          assert p.returncode in (0, 2), "unexpected preflight crash"
+        # NO-GO is correct while rights, history, license and public submission remain gated.
