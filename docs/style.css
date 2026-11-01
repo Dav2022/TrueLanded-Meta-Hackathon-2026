@@ -17,3 +17,16 @@
 @media(max-width:670px){.hyp-workbench{padding:20px}.hyp-controls{display:grid;grid-template-columns:1fr}.hyp-controls input{width:100%}}
 
 .doc-paper li.source-literal-focus{background:#123c44;border-left:3px solid #2fe1d0;padding:7px 9px;color:#f4fffc;border-radius:3px}
+
+/* DF-071 transparent Meta provenance — no inference is invoked from the browser. */
+.provenance-panel{border-top:1px solid #315067;border-bottom:1px solid #315067;background:#0b2033;padding:70px max(5vw,20px)}
+.provenance-head{max-width:1280px;margin:0 auto 25px}
+.provenance-head h2{font-size:clamp(23px,3.8vw,42px);line-height:1.2;letter-spacing:-.035em;margin:5px 0 14px}
+.provenance-head p:not(.eyebrow){color:#acc4d0;font-size:14px;line-height:1.6}
+.provenance-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.provenance-grid article{border:1px solid #3d6176;border-radius:10px;background:#122b40;padding:22px;display:flex;flex-direction:column;gap:13px}
+.provenance-grid .prov-kicker{font-size:11px;letter-spacing:.1em;color:#83dbe6;font-weight:800}
+.provenance-grid h3{font-size:20px;margin:0;line-height:1.2}
+.provenance-grid p{font-size:12px;color:#bad0dc;line-height:1.7;margin:0;flex:1}
+.provenance-grid b{font-size:11px;color:#efca94;font-weight:800}
+@media(max-width:900px){.provenance-grid{grid-template-columns:1fr}}
