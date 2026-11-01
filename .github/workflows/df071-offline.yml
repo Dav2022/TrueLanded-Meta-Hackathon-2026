@@ -45,6 +45,10 @@ jobs:
                   bundle.extractall(dest)
               subprocess.run([sys.executable, "-B", "RUN_JUDGE_CHECKS.py"],
                              cwd=dest, check=True)
+              subprocess.run(["node", "--test",
+                              "tests/test_df071_counterfactual.cjs",
+                              "tests/test_df071_browser_contract.cjs"],
+                             cwd=dest, check=True)
       - name: Build private allowlisted Judge Kit ZIP
         if: matrix.os == 'ubuntu-latest'
         shell: python
