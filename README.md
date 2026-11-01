@@ -25,8 +25,13 @@ hackathon, with technical project records maintained privately by their owner.
 No commercial TrueLanded source, confidential customer documents, real Meta
 response bodies, provider keys, or copyright-cleared assumptions are included.
 
-**PREPUBLICATION CANDIDATE — NOT YET LICENSED OR APPROVED FOR PUBLIC RELEASE.**
-A code license must be explicitly authorized by the owner before publication.
+**LICENSE: MIT — competition-only files in this repository.**
+Copyright (c) 2026 David Soto Leon. See [LICENSE](LICENSE). The licence
+permits third-party use, modification and redistribution of these released files.
+It does not license separate pre-existing commercial TrueLanded software,
+confidential project records, the DF-075 film or its source projects. The
+TrueLanded name and branding are not licensed as trademarks by MIT.
+**The repository remains private pending a separate GitHub publication gate.**
 
 DF-073 integrates the unchanged competition-only DF-069 adjudication engine and
 30 fabricated attacks. Open `docs/adjudication.html` through the same local server

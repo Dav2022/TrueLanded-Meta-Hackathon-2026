@@ -1,6 +1,7 @@
 # Competition snapshot — scope and provenance
 
-Private review candidate. No publication, redistribution license or organizer
+Competition-only release candidate, MIT licensed by its sole declared owner.
+The GitHub repository remains private: no public visibility change or organizer
 submission is authorized by this document.
 
 The pre-existing commercial TrueLanded product is excluded. This snapshot
@@ -32,15 +33,20 @@ binary, stock image, music or third-party video is distributed here.
 
 File hashes and dates establish byte provenance, not independent proof of
 authorship, absence of derivative work, third-party clearance or contest
-eligibility. Owner review of rights, contributors, terms and a specific
-publication license remains required. All commercial rights remain reserved.
+eligibility. The sole declared owner authorized MIT for this competition-only
+release; the separate pre-existing commercial product remains proprietary.
+Rights in excluded source, confidential materials and audiovisual files
+are not transferred by this license.
 
 An isolated clean branch does not remove the other branches, pull-request
 references or retained objects in the same existing repository. Keep the
 repository private until its history and publication gates are explicitly cleared.
 
-DF074 release-candidate review preserves this exact 43-file competition scope
-and the independent DF072 ancestry. References to restricted historical branches
-and frozen private-package fingerprints are retained only in the owner's private
-review materials, outside this distribution. This review does not apply an
-Apache-2.0 license, add SPDX license grants, authorize publication or certify rights.
+DF078 adds the owner-authorized MIT LICENSE and refreshes documentation and
+the cryptographic release manifest without modifying any functional module.
+The distribution is limited to 44 files, including the new LICENSE. References
+to restricted historical branches and frozen private-package fingerprints
+remain only in the owner's private review materials, not in this release.
+MIT is not extended to the commercial product or audiovisual assets.
+Historical repository references, PRs and Actions remain a separate release
+blocker; no change in visibility or official submission is authorized.
