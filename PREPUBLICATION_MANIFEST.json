@@ -2,12 +2,12 @@
   "schema": "DF078_MIT_LICENSED_CONTEST_RELEASE_CANDIDATE_V1",
   "source_repository": "Dav2022/TrueLanded-Meta-Hackathon-2026",
   "provenance_and_ancestry_recorded_in_private_review": true,
-  "release_candidate": "RC3_MIT_LICENSED_PRIVATE_PREPUBLICATION",
+  "release_candidate": "RC4_MIT_PUBLIC_REPOSITORY_AND_PAGES",
   "history_included": false,
   "actual_meta_response_embedded": false,
   "source_document_type": "SYNTHETIC_ONLY",
   "licensed_for_publication": true,
-  "publication_approved": false,
+  "publication_approved": true,
   "signature_by_meta_or_issuer": false,
   "files": {
     ".gitattributes": {
@@ -19,12 +19,12 @@
       "bytes": 1072
     },
     "NEW_WORK_AND_SCOPE.md": {
-      "sha256": "149cc88c1df88f7b63de453246b037b5ed2948fc3856c7be56e5578ea0e82618",
-      "bytes": 3160
+      "sha256": "2c6ccfefa597f53726989bb62538287b7fc49c653d36b69ab5ad982def263566",
+      "bytes": 3593
     },
     "README.md": {
-      "sha256": "3dfe297783979823b06dcad167568befefe50097120eeab8e17c555c00a4125b",
-      "bytes": 2521
+      "sha256": "b035930096cc14442fec0c53a0a49fd31652bc2429824b5be8ed40450ba9a3c7",
+      "bytes": 2892
     },
     "RUN_PUBLIC_TESTS.py": {
       "sha256": "8592a60b21a0c69b3c4d42e6bc88f031727b562e41f2103672784c436e1564c0",
@@ -185,5 +185,10 @@
   },
   "license_spdx": "MIT",
   "copyright_holder": "David Soto Leon",
-  "license_scope": "Competition-only contents of this repository; excludes commercial product, audiovisual work, private materials and trademark rights."
+  "license_scope": "Competition-only contents of this repository; excludes commercial product, audiovisual work, private materials and trademark rights.",
+  "public_repository_url": "https://github.com/Dav2022/TrueLanded-Meta-Hackathon-2026",
+  "github_pages_site_url": "https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/",
+  "github_pages_source": "main:/docs",
+  "retained_closed_pr1_history_accepted_by_owner": true,
+  "official_hackathon_submission_confirmed": false
 }

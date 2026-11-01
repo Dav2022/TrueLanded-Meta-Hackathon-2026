@@ -31,7 +31,14 @@ permits third-party use, modification and redistribution of these released files
 It does not license separate pre-existing commercial TrueLanded software,
 confidential project records, the DF-075 film or its source projects. The
 TrueLanded name and branding are not licensed as trademarks by MIT.
-**The repository remains private pending a separate GitHub publication gate.**
+**Public contest repository:** https://github.com/Dav2022/TrueLanded-Meta-Hackathon-2026
+
+**Try the interactive evidence demo:** https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/
+
+**Explore the synthetic adversarial lab:** https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/adjudication.html
+
+The demo is static and offline-simulated: it does not initiate new Meta model
+requests, verify real customs records or replace human judgment.
 
 DF-073 integrates the unchanged competition-only DF-069 adjudication engine and
 30 fabricated attacks. Open `docs/adjudication.html` through the same local server
