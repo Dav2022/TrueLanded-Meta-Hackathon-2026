@@ -34,6 +34,31 @@ Or on Linux/macOS: `cd docs && python3 -m http.server 18973 --bind 127.0.0.1`.
 
 Open **http://127.0.0.1:18973/**. Select each of the three stages to inspect the source, next documentary proof and newly opened/resolved obligations. The browser hashes every fictional source before displaying its results. It refuses display when the checks fail.
 
+### Live recalculation of a bounded hypothetical case (DF-071)
+
+The public-facing *preview* now contains a what-if panel below the three stage
+cards. The evaluator can enter an **illustrative** invoice quantity and USD
+line total. `docs/counterfactual.js` computes the arithmetic in integer cents,
+reconstructs discrepancies and selects the next fictional proof request.
+This is genuine deterministic local execution **not a new Muse inference**.
+The original synthetic document text remains immutable.
+
+The browser verifies each original synthetic source SHA-256 against its pinned
+commitment and recomputes a cross-source SHA-256 index; a changed source or
+index makes the interface fail closed. These are **owner-issued checks**, not
+issuer authentication, proof of model provenance or legal clearance.
+
+To run the additional browser calculations and tamper tests, Node.js 22 or
+later is optional:
+
+```bash
+node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs
+```
+
+The default Python 3.11 evaluator command remains sufficient to run the
+offline code's Python regression suite. The automated Windows/Ubuntu
+acceptance workflow runs both languages and tests a clean extracted bundle.
+
 If a public GitHub Pages site is activated later from the `/docs` directory, the same static experience can run over HTTPS without server-side secrets. **No deployment or publication has been authorized in the current private release.**
 
 ## Reproduce the engineering independently
