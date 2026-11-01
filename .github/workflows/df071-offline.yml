@@ -45,6 +45,24 @@ jobs:
                   bundle.extractall(dest)
               subprocess.run([sys.executable, "-B", "RUN_JUDGE_CHECKS.py"],
                              cwd=dest, check=True)
+      - name: Build private allowlisted Judge Kit ZIP
+        if: matrix.os == 'ubuntu-latest'
+        shell: python
+        run: |
+          import os, pathlib, subprocess, sys, hashlib
+          destination = pathlib.Path(os.environ["RUNNER_TEMP"]) / "DF071_TrueLanded_Judge_Kit_PRIVATE.zip"
+          subprocess.run([sys.executable, "-B", "judge_kit/BUILD_JUDGE_KIT.py",
+                          "--output", str(destination)], check=True)
+          print("PRIVATE_JUDGE_KIT_SHA256=" + hashlib.sha256(destination.read_bytes()).hexdigest())
+          print("PRIVATE_JUDGE_KIT_BYTES=" + str(destination.stat().st_size))
+      - name: Retain private Judge Kit artifact (7 days)
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: DF071-PRIVATE-Judge-Kit-${{ github.sha }}
+          path: ${{ runner.temp }}/DF071_TrueLanded_Judge_Kit_PRIVATE.zip
+          if-no-files-found: error
+          retention-days: 7
       - name: Offline release preflight (expected NO-GO)
         shell: python
         run: |
