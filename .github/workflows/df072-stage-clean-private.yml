@@ -1,0 +1,79 @@
+name: DF072 stage clean root privately
+on:
+  push:
+    branches: [df071-remediation-private]
+permissions:
+  contents: write
+jobs:
+  stage:
+    if: ${{ github.repository == 'Dav2022/TrueLanded-Meta-Hackathon-2026' && github.event.repository.private == true }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Construct and privately test sanitized root
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin df072-clean-jury-private >/dev/null; then
+            echo "PRIVATE_CLEAN_BRANCH_ALREADY_EXISTS; refusing overwrite"
+            exit 2
+          fi
+          mkdir -p "$RUNNER_TEMP/clean-export"
+          python -B scripts/df072_build_release_candidate.py --output "$RUNNER_TEMP/clean-export/df072-private.zip"
+          python - "$RUNNER_TEMP/clean-export/df072-private.zip" "$RUNNER_TEMP/clean-export/root" <<'PY'
+          import pathlib,sys,zipfile,json,hashlib
+          p=pathlib.Path(sys.argv[1]); dest=pathlib.Path(sys.argv[2])
+          with zipfile.ZipFile(p) as archive:
+              names=archive.namelist()
+              assert names and len(names)==len(set(names))
+              assert not any(name.startswith(("viewer/","review/","private/",".github/",".git/")) for name in names)
+              archive.extractall(dest)
+          manifest=json.loads((dest/"PREPUBLICATION_MANIFEST.json").read_text("utf8"))
+          assert manifest["history_included"] is False
+          assert manifest["publication_approved"] is False
+          assert manifest["licensed_for_publication"] is False
+          assert manifest["actual_meta_response_embedded"] is False
+          assert set(names)-{"PREPUBLICATION_MANIFEST.json"} == set(manifest["files"])
+          for name,entry in manifest["files"].items():
+              b=(dest/name).read_bytes()
+              assert hashlib.sha256(b).hexdigest()==entry["sha256"]
+          PY
+          ( cd "$RUNNER_TEMP/clean-export/root" && python -B RUN_PUBLIC_TESTS.py && node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs )
+      - name: Create private clean-root branch without altering main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "TrueLanded Contest CI"
+          git config user.email "noreply@users.noreply.github.com"
+          git switch --orphan df072-clean-jury-private
+          python - "$GITHUB_WORKSPACE" "$RUNNER_TEMP/clean-export/root" <<'PY'
+          import pathlib,shutil,sys
+          root=pathlib.Path(sys.argv[1]);source=pathlib.Path(sys.argv[2])
+          for item in root.iterdir():
+              if item.name == ".git": continue
+              if item.is_symlink() or item.is_file(): item.unlink()
+              elif item.is_dir(): shutil.rmtree(item)
+          for item in source.iterdir():
+              dest=root/item.name
+              if item.is_file(): shutil.copy2(item,dest)
+              else: shutil.copytree(item,dest)
+          PY
+          git add -A
+          git commit -m "feat(df072): private sanitized hackathon judging root; public release blocked"
+          test "$(git rev-list --count HEAD)" = "1"
+          if git ls-files | grep -Ei '(^viewer/|^review/|^private/|^\.github/|df040|receipt|api_key)' ; then
+            echo "BLOCKED_PRIVATE_ARTIFACT_IN_ROOT"
+            exit 3
+          fi
+          git push origin HEAD:refs/heads/df072-clean-jury-private
+          echo "DF072_CLEAN_HISTORY_PRIVATE_BRANCH_STAGED"
