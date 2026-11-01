@@ -1,8 +1,31 @@
 # DF-042 — Matriz de elegibilidad y jerarquía de fuentes
 
-**Fecha de revisión:** 2026-10-29 (Costa Rica). **Estado:** auditoría técnica privada; no constituye dictamen jurídico ni autorización de envío.
+**Fecha de revisión original:** 2026-10-29 (Costa Rica). **Adenda verificada:** 2026-10-31. **Estado:** auditoría técnica privada; no constituye dictamen jurídico ni autorización de envío.
 
 ## Jerarquía de fuentes
+
+## ADENDA DF-072 — Revisión documental directa del Event Waiver
+
+**Hallazgo:** el archivo del propietario `Event Waiver.pdf` comienza con el título
+`Hackathon Terms & Conditions (“Official Rules”) and Event Waiver`, y contiene
+reglas de participación, evaluación, titularidad, licencias y presentación.
+Por tanto, la afirmación antigua de que **no teníamos el texto oficial** ya no es
+correcta. No equivale a comprobar el registro electrónico de aceptación del usuario
+en Cerebral Valley; esa aceptación permanece pendiente de verificación.
+
+- **Official Rules disponibles y examinadas:** PASS documental.
+- **Aceptación electrónica de las Official Rules en el portal:** NO VERIFICADA.
+- **Secciones de derechos:** `Release of Information` y `Hackathon Submission`:
+  titularidad del participante, pero licencia organizador amplia, mundial y perpetua;
+  el material compartido no recibe garantía de confidencialidad.
+- **Guía §4:** repositorio público, trabajo desarrollado durante el evento y derechos
+  sobre el contenido; una copia ZIP privada no sustituye la URL pública exigida.
+- **Guía §7:** video de 3 minutos, URL accesible, colaboradores completos,
+  presentación antes de la hora límite.
+
+**El resto de la matriz se conserva como registro histórico DF-042 y las notas
+anteriores sobre waiver no disponible deben leerse en este nuevo contexto.**
+
 
 **P1 — Guía del participante recibida por el propietario:** `Meta Global AI Developer Hackathon Participant Guide.pdf`, siete páginas. Apartados 3 (Schedule), 4 (Hackathon Rules), 7 (Submission Process), 8 (Judging Process). La guía está en los materiales privados del proyecto; NO está incluida en el repositorio competitivo.
 
