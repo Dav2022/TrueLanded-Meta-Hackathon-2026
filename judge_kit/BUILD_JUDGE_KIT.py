@@ -28,6 +28,7 @@ TESTS = (
     "test_df025_muse_integration_e2e.py", "test_df026_independent_oracle.py",
     "test_df036_demo_evidence_gate.py", "test_df037_mock_e2e.py",
     "test_df040_private_capture_review.py", "test_df043_static_site.py",
+    "test_df071_counterfactual.cjs", "test_df071_browser_contract.cjs",
 )
 DEMO = ("index.html", "server.py", "style.css", "ui.js")
 REVIEW = ("index.html", "server.py", "style.css", "ui.js")
