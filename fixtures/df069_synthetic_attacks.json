@@ -1,0 +1,2156 @@
+{
+  "benchmark_v1_had_three_schema_fixture_typo_failures": true,
+  "cases": [
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 3,
+        "excluded": 0,
+        "gate": "DOCUMENTARY_QUANTITY_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T01_BASE_DOCUMENTED_THREE",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 0,
+        "excluded": 0,
+        "gate": "NO_DOCUMENTARY_PACKAGE_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T02_ZERO_DIFFERENCE",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": -2,
+        "excluded": 0,
+        "gate": "DOCUMENTARY_QUANTITY_SURPLUS_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T03_SURPLUS_ACTA",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 70,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 3,
+        "excluded": 1,
+        "gate": "DOCUMENTARY_QUANTITY_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T04_INVOICE_68_PIECES",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_INVOICE",
+            "field": "commercial_units",
+            "id": "QTY_INV_U",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3",
+            "support_label": "Factura: cantidad informativa",
+            "unit": "pieces",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 3,
+        "excluded": 1,
+        "gate": "DOCUMENTARY_QUANTITY_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T05_INVOICE_65_PIECES",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_INVOICE",
+            "field": "commercial_units",
+            "id": "QTY_INV_U",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3",
+            "support_label": "Factura: cantidad informativa",
+            "unit": "pieces",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 3,
+        "excluded": 1,
+        "gate": "DOCUMENTARY_QUANTITY_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T06_INVOICE_WEIGHT_3_KG",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_INVOICE",
+            "field": "gross_weight",
+            "id": "QTY_INV_U",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3",
+            "support_label": "Factura: cantidad informativa",
+            "unit": "kg",
+            "value": 3,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_INSUFFICIENT_VISUALLY_CORRELATED_SOURCES",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T07_MISSING_ACTA_OBSERVATION",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_INSUFFICIENT_VISUALLY_CORRELATED_SOURCES",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T08_MISSING_BL_OBSERVATION",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_INSUFFICIENT_VISUALLY_CORRELATED_SOURCES",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T09_UNVERIFIED_BL_OCR_ONLY",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "ocr_unconfirmed"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_INSUFFICIENT_VISUALLY_CORRELATED_SOURCES",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T10_UNVERIFIED_ACTA_OCR_ONLY",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "ocr_unconfirmed"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": 3,
+        "excluded": 0,
+        "gate": "DOCUMENTARY_QUANTITY_DIFFERENCE_FOR_REVIEW",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T11_TWO_ACTA_SAME_VALUE",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA_ACTA_COPY",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "90b5b1db06adafe39179bd2a3fdf5a10db2d3615c7a348a3fbe0c2313105c571"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA_ACTA_COPY",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA_COPY",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "90b5b1db06adafe39179bd2a3fdf5a10db2d3615c7a348a3fbe0c2313105c571",
+            "support_label": "Documento adicional con recuento",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_CONFLICTING_PRIMARY_DOCUMENT_EVIDENCE",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T12_ACTA_65_VS_52",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA_ACTA_CONFLICT",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "ae2bec0460d97d1c95e9c11b1bb4538951d1e7804fe9129540e3b6d4aa3d0c24"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA_ACTA_CONFLICT",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA_CONFLICT",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ae2bec0460d97d1c95e9c11b1bb4538951d1e7804fe9129540e3b6d4aa3d0c24",
+            "support_label": "Documento adicional con recuento",
+            "unit": "packages",
+            "value": 52,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "BLOCKED_CONFLICTING_PRIMARY_DOCUMENT_EVIDENCE",
+        "output_mode": "ADJUDICATION"
+      },
+      "id": "T13_BL_68_VS_70",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL_BL_CONFLICT",
+            "page_count": 1,
+            "role": "bill_of_lading",
+            "source_sha256": "e4c2c6efed89a04ffabdc84aa81cde5165437b1c4596086e8f1b5d3bdf523ad5"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_BL_BL_CONFLICT",
+            "field": "declared_packages",
+            "id": "QTY_BL_CONFLICT",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "e4c2c6efed89a04ffabdc84aa81cde5165437b1c4596086e8f1b5d3bdf523ad5",
+            "support_label": "Documento adicional con recuento",
+            "unit": "packages",
+            "value": 70,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T14_SHIPMENT_CONTEXT_MISMATCH",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "OTHER_SHIPMENT",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T15_OBSERVATION_SOURCE_HASH_SWAPPED",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T16_DUPLICATE_BINARY_AS_DIFFERENT_DOC",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T17_INVOICE_PIECES_AS_PACKAGES",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_INVOICE",
+            "field": "commercial_units",
+            "id": "QTY_INVu",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3",
+            "support_label": "Factura: cantidad informativa",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T18_INVOICE_IMPERSONATES_BL",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_INVOICE",
+            "field": "declared_packages",
+            "id": "QTY_INVu",
+            "ocr_gate": "NOT_APPLICABLE",
+            "page": 1,
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3",
+            "support_label": "Factura: cantidad informativa",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T19_BOOL_QUANTITY_NOT_INTEGER",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": true,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T20_FORGED_PRIVACY_APPROVAL",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": true,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T21_FAKE_HUMAN_SOURCE_APPROVAL",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "final_human_source_confirmed"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T22_DUPLICATE_OBSERVATION_ID",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T23_ORPHAN_OBSERVATION",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "DOC_ABSENT",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T24_UNKNOWN_FIELD",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "physical_shortage_proven",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T25_BAD_ORIGINAL_HASH",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T26_PAGE_OUTSIDE_DOCUMENT",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 3,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T27_PROHIBITED_HTML_SOURCE_CLAIM",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "<script>alert(1)</script>",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T28_UNKNOWN_PRIVACY_KEY",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "auto_accept": true,
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T29_DIFFERENT_UNIT_WEIGHT_WRONG_ROLE",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "kg",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": false,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    },
+    {
+      "description": "Synthetic deterministic test, not new AI evidence",
+      "expected": {
+        "difference": null,
+        "excluded": 0,
+        "gate": "REJECTED_INPUT",
+        "output_mode": "REJECTED"
+      },
+      "id": "T30_FINAL_REVIEW_FLAG_FORGERY",
+      "request": {
+        "case_alias": "SYNTHETIC_QTY_CASE",
+        "documents": [
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_BL",
+            "page_count": 2,
+            "role": "bill_of_lading",
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_ACTA",
+            "page_count": 1,
+            "role": "physical_inspection",
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e"
+          },
+          {
+            "case_alias": "SYNTHETIC_QTY_CASE",
+            "id": "SYN_INVOICE",
+            "page_count": 3,
+            "role": "commercial_invoice",
+            "source_sha256": "ede861730bc0c92023689d37f4634fc9ba9ac6a10a130f7d014c638067cb9da3"
+          }
+        ],
+        "observations": [
+          {
+            "document_id": "SYN_BL",
+            "field": "declared_packages",
+            "id": "QTY_BL",
+            "ocr_gate": "HOLD_INCOMPLETE_READ_STABILITY",
+            "page": 1,
+            "source_sha256": "9d00facf22b1244a853f38556867323a41183079106a975dc159da486ba318e0",
+            "support_label": "B/L: cantidad total 68",
+            "unit": "packages",
+            "value": 68,
+            "visual_status": "prior_visual_correlated"
+          },
+          {
+            "document_id": "SYN_ACTA",
+            "field": "inspected_packages",
+            "id": "QTY_ACTA",
+            "ocr_gate": "BLOCK_CONTRADICTORY_OCR_NUMERALS",
+            "page": 1,
+            "source_sha256": "f4f3ad77bcfaf4cd11019b87325ccf1786339af29dee7d17a4e193c477f2829e",
+            "support_label": "Acta: cantidad 65",
+            "unit": "packages",
+            "value": 65,
+            "visual_status": "prior_visual_correlated"
+          }
+        ],
+        "privacy_gate": {
+          "human_privacy_review_complete": true,
+          "outbound_approved": false,
+          "real_sources_local_only": false
+        },
+        "schema": "df068/input-source-bound-v1"
+      }
+    }
+  ],
+  "fixtures_are_fictional": true,
+  "model_calls": 0,
+  "number": 30,
+  "previous_algorithm_unchanged": true,
+  "schema": "df069/standalone-fabricated-attack-scenarios/v1"
+}

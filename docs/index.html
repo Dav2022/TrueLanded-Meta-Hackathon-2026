@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#091425">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; object-src 'none'; form-action 'none'; frame-ancestors 'none'">
+<meta name="description" content="TrueLanded: source-grounded documentary evidence planning. A synthetic interactive demo of Evidence Spotlight, Next Best Proof and Counterfactual Cascade.">
+<title>TrueLanded — From Documents to Defensible Decisions</title>
+<link rel="stylesheet" href="style.css">
+<script src="counterfactual.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a href="#workspace" class="skip">Skip to evidence workspace</a>
+<div class="outer">
+<header class="mast"><a class="wordmark" href="#top" aria-label="TrueLanded home"><span class="brand-symbol">TL<span class="dot">.</span></span><span class="brand-name">TRUE<span>LANDED</span></span></a><div class="mast-meta"><span class="dot-live" aria-hidden="true"></span> EVIDENCE INTELLIGENCE <span class="divider">/</span> META AI HACKATHON 2026</div></header>
+<main id="top">
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow"><span class="eyeline"></span> BUILD FOR YOUR WORLD <span class="tag">INDIE DEVELOPER TRACK</span></p>
+<h1>The document changed.<br><em>The decision should too.</em></h1>
+<p class="subtitle">When an invoice and a packing list disagree, guesswork costs time. TrueLanded verifies the evidence, prioritizes the missing proof and shows <strong>what changes when new documents arrive.</strong></p>
+<div class="hero-actions"><a href="#workspace" class="cta primary">Explore the case <span aria-hidden="true">↗</span></a><a href="#trust" class="cta secondary">How we verify <span aria-hidden="true">↓</span></a></div>
+<div class="hero-note"><span class="chip amber">SIMULATED · NO LIVE META CALL</span><span class="soft">Fictional records · human-in-the-loop · read-only evaluation</span></div>
+</div>
+<div class="hero-visual" aria-hidden="true">
+<div class="visual-glow"></div>
+<div class="visual-label">DECISION TRACE <span>01 / 03</span></div>
+<div class="flow-card flow-one"><span>01 — SOURCE</span><strong>PACKING RECONFIRMATION</strong><small>QUANTITY 28 PCS</small><span class="icon-arrow">↘</span></div>
+<div class="flow-card flow-two"><span>02 — DIAGNOSIS</span><strong>QUANTITY MISMATCH</strong><small>DOCUMENT RECONCILIATION</small></div>
+<div class="flow-card flow-three"><span>03 — NEXT PROOF</span><strong>RECONCILED INVOICE</strong><small>HUMAN REVIEW REQUIRED</small></div>
+<div class="flow-bottom">TRACEABLE INPUT <span>→</span> EXPLAINABLE OUTPUT</div>
+</div>
+</section>
+<section class="metrics" aria-label="Technical verification summary"><div><strong>03</strong><span>Synthetic revisions</span></div><div><strong id="verified-total">0/18</strong><span>Source literals verified</span></div><div><strong>0</strong><span>Meta calls in this browser</span></div><div><strong>100%</strong><span>Human decision authority</span></div></section>
+<section class="workspace" id="workspace" aria-label="Interactive evidence review">
+<div class="workspace-head"><div><p class="eyebrow">INTERACTIVE EVIDENCE REVIEW</p><h2>One case. Three revisions.<br><span>See what the evidence changes.</span></h2></div><div class="validation" id="validation" role="status" aria-live="polite">VERIFYING SOURCE INTEGRITY…</div></div>
+<div class="notice" role="note"><strong>Verification boundary:</strong> This demo uses a <em>local simulated response</em> in the Muse Spark 1.3 response format. The project owner separately completed a real Meta API request; that private receipt is not embedded here. Source hashes are locally computed, <strong>not supplier or Meta signatures</strong>.</div>
+<div class="stage-trail" id="stage-trail" role="group" aria-label="Select a document revision">
+<button type="button" class="stage-button" disabled>Loading evidence…</button>
+</div>
+<div class="evidence-grid">
+<article class="panel source-panel"><div class="panel-head"><span class="panel-index">01</span><div><p class="panel-kicker">EVIDENCE SPOTLIGHT</p><h3>What does the source actually say?</h3></div><span class="panel-flag">SOURCE BOUND</span></div><p class="panel-blurb">Every model candidate must match an exact line in the fictional document. If it doesn't, TrueLanded refuses the result.</p><div class="doc-paper"><div class="doc-top"><div class="doc-tiny">FICTIONAL TRADE DOCUMENT</div><div id="doc-label">SOURCE RECORD</div></div><ol id="source-lines" aria-label="Exact lines in fictional source"></ol></div><div class="field-row"><span>Source SHA-256</span><code id="source-sha">VERIFYING…</code></div><div class="field-row"><span>Exact lines matched</span><strong id="literal-match">—</strong></div></article>
+<div class="analysis-stack">
+<article class="panel action-panel"><div class="panel-head"><span class="panel-index cyan">02</span><div><p class="panel-kicker">NEXT BEST PROOF</p><h3>What should we request next?</h3></div></div><p class="panel-blurb">Prioritized by deterministic evidence-planning rules—not by an unverified customs conclusion.</p><div class="proof-box"><span class="proof-caption">HIGHEST-PRIORITY PROOF</span><strong id="next-proof">VERIFYING…</strong><span class="proof-sub">Recommendation only. No request is sent.</span></div><p class="label-mini">UNRESOLVED OBLIGATIONS</p><div id="open-obligations" class="pills"></div></article>
+<article class="panel cascade-panel"><div class="panel-head"><span class="panel-index purple">03</span><div><p class="panel-kicker">COUNTERFACTUAL CASCADE</p><h3>What changed with this revision?</h3></div></div><div class="delta-grid"><div><span class="delta-heading">NEW UNCERTAINTY</span><div id="newly-exposed" class="pills"></div></div><div><span class="delta-heading">CONDITIONALLY RECONCILED</span><div id="reconciled" class="pills"></div></div></div><p class="human">◉ Human review remains mandatory. Source issuer is not authenticated.</p></article>
+</div>
+</div>
+<section class="hyp-workbench" aria-label="Calculate a new fictional invoice hypothesis">
+<div>
+<p class="eyebrow">TRY A NEW HYPOTHESIS · NO MODEL API CALL</p>
+<h3>What if the invoice numbers changed?</h3>
+<p>Change the fictional invoice quantity or total. The browser recalculates which contradictions remain, which proof is needed next and what changed. This does not modify any original source.</p>
+</div>
+<div class="hyp-controls">
+<label for="hyp-quantity">Hypothetical quantity (PCS)<input id="hyp-quantity" type="number" inputmode="numeric" min="1" max="999" step="1" value="28"></label>
+<label for="hyp-total">Hypothetical invoice line total (USD)<input id="hyp-total" type="text" inputmode="decimal" maxlength="9" value="235.06" aria-describedby="hyp-format"></label>
+<span id="hyp-format" class="hyp-hint">Use a dot and exactly two decimals, e.g. 221.76.</span>
+<button id="hyp-apply" type="button" class="cta primary">Recalculate fictional decision</button>
+<button id="hyp-reset" type="button" class="cta secondary">Reset hypothesis</button>
+</div>
+<div id="hyp-result" class="hyp-result" role="status" aria-live="polite">Verifying fictional source before calculation…</div>
+</section>
+<div class="case-footer"><div><span class="eyebrow">TRANSPARENCY</span><p>The model's role is candidate text extraction. <strong>The source match, prioritization and obligation changes come from TrueLanded's deterministic code.</strong></p></div><div class="trace" id="trace-hash">NO UNVERIFIED DATA DISPLAYED</div></div>
+</section>
+<section class="workspace" aria-label="Independent synthetic attack lab"><p class="eyebrow">CHALLENGE THE RULES</p><h2>What if the sources disagree?</h2><p class="panel-blurb">Replay 30 fabricated attacks against typed documentary evidence: incompatible units, conflicting inspection counts, tampered source bindings and forged approvals. Results are reproduced by the included Python engine.</p><a class="cta secondary" href="adjudication.html">Open the synthetic evidence attack lab ↗</a></section>
+<section class="provenance-panel" id="model-provenance" aria-label="Meta AI provenance and deterministic computation boundaries">
+<div class="provenance-head"><p class="eyebrow">MODEL PROVENANCE · NO CLAIMS OF PROVIDER SIGNATURE</p><h2>What Meta did. What TrueLanded calculated.</h2><p>These are separate technical roles. The current browser is an offline synthetic demonstration, not a new API request.</p></div>
+<div class="provenance-grid">
+<article><span class="prov-kicker">META MUSE SPARK 1.3</span><h3>Candidate extraction</h3><p>In a separate, owner-recorded authorized Model API experiment, a synthetic three-document request returned HTTP 200. TrueLanded locally matched 18 of 18 candidate source literals. This historical result is not a provider-signed certificate and its private raw response is not distributed.</p><b>Historical test · not live in this page</b></article>
+<article><span class="prov-kicker">TRUELANDED DETERMINISTIC ENGINE</span><h3>Traceable reasoning</h3><p>Source matching, invariant checks, documentary obligation tracking, hypothetical changes and next-proof prioritization are computed by transparent rules. The what-if below uses integer-cent arithmetic and never calls a language model.</p><b>Executed locally · human approval required</b></article>
+<article><span class="prov-kicker">REPRODUCIBLE JUDGE KIT</span><h3>Adversarial acceptance</h3><p>Python and Node tests verify synthetic cases, check source-index integrity and reject tampering. The package includes no credentials or customer documents and never files a customs entry. Source SHA-256 does not prove issuer authenticity.</p><b>Independent clean-extract checks</b></article>
+</div>
+</section>
+<section class="method" id="trust"><div class="method-head"><p class="eyebrow">WHY THIS IS DIFFERENT</p><h2>Trust isn't a claim.<br><span>It's a test you can rerun.</span></h2></div><div class="method-grid"><div class="method-card"><span>01 / EXTRACT</span><h3>Model proposes</h3><p>Meta Muse Spark 1.3 supplies candidate literal fields in the verified API path. This website shows an offline test double—not a live request.</p></div><div class="method-card"><span>02 / VERIFY</span><h3>Sources decide</h3><p>Exact source text, line anchors and SHA-256 checks fail closed if claims do not match the fictional documents.</p></div><div class="method-card"><span>03 / PLAN</span><h3>Human retains control</h3><p>Ranked documentary requirements and hypothetical resolution changes assist review. No automatic filing or legal authorization.</p></div></div></section>
+<section class="conclusion"><div><p class="eyebrow">PROTOTYPE · OCTOBER 2026</p><h2>Evidence first.<br><span>Action when justified.</span></h2></div><p>TrueLanded explores a practical future for global trade compliance: one where every recommended next step can be traced back to a document and challenged by a person.</p></section>
+</main>
+<footer class="footer"><div class="wordmark"><span class="brand-symbol">TL<span class="dot">.</span></span><span class="brand-name">TRUE<span>LANDED</span></span></div><div>Meta Global AI Developer Hackathon 2026 · <b>Fictional demonstration</b></div><div>Not a customs ruling · Not provider-signed · No client records · All rights subject to review.</div></footer>
+</div>
+</body>
+</html>
