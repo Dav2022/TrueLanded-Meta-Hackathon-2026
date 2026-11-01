@@ -67,6 +67,55 @@ jobs:
           path: ${{ runner.temp }}/DF071_TrueLanded_Judge_Kit_PRIVATE.zip
           if-no-files-found: error
           retention-days: 7
+      - name: Build and independently test DF072 safe publication candidate
+        shell: python
+        run: |
+          import pathlib, subprocess, sys, os, tempfile, zipfile, json, hashlib
+          from pathlib import PurePosixPath
+          with tempfile.TemporaryDirectory(prefix="df072-safe-") as tmp:
+              archive = pathlib.Path(tmp) / "competition-safe-preview.zip"
+              dest = pathlib.Path(tmp) / "clean-root"
+              subprocess.run([sys.executable, "-B",
+                              "scripts/df072_build_release_candidate.py",
+                              "--output", str(archive)], check=True)
+              with zipfile.ZipFile(archive) as pack:
+                  names = pack.namelist()
+                  assert names and len(names) == len(set(names))
+                  assert not any(x.lower().startswith(("viewer/","review/",".git/","private/"))
+                                 for x in names)
+                  pack.extractall(dest)
+              manifest = json.loads((dest / "PREPUBLICATION_MANIFEST.json").read_text("utf8"))
+              assert manifest["publication_approved"] is False
+              assert manifest["history_included"] is False
+              assert manifest["actual_meta_response_embedded"] is False
+              assert manifest["licensed_for_publication"] is False
+              assert set(manifest["files"]) == set(names)-{"PREPUBLICATION_MANIFEST.json"}
+              for key,value in manifest["files"].items():
+                  raw = (dest / key).read_bytes()
+                  assert hashlib.sha256(raw).hexdigest() == value["sha256"]
+              subprocess.run([sys.executable, "-B", "RUN_PUBLIC_TESTS.py"],
+                             cwd=dest, check=True)
+              subprocess.run(["node", "--test", "tests/test_df071_counterfactual.cjs",
+                              "tests/test_df071_browser_contract.cjs"],
+                             cwd=dest, check=True)
+              print("DF072_INDEPENDENT_SAFE_PREVIEW_PASS")
+      - name: Export short-lived private DF072 candidate
+        if: matrix.os == 'ubuntu-latest'
+        shell: python
+        run: |
+          import pathlib, os, subprocess, sys
+          target = pathlib.Path(os.environ["RUNNER_TEMP"]) / "DF072_Clean_Contest_Preview_PRIVATE.zip"
+          subprocess.run([sys.executable, "-B",
+                          "scripts/df072_build_release_candidate.py",
+                          "--output", str(target)], check=True)
+      - name: Retain DF072 private preview for owner review (7 days)
+        if: matrix.os == 'ubuntu-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: DF072-CLEAN-PRIVATE-PREVIEW-${{ github.sha }}
+          path: ${{ runner.temp }}/DF072_Clean_Contest_Preview_PRIVATE.zip
+          if-no-files-found: error
+          retention-days: 7
       - name: Offline release preflight (expected NO-GO)
         shell: python
         run: |
