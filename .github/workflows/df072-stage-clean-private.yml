@@ -20,14 +20,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Construct and privately test sanitized root
+      - name: Detect existing private staging branch
+        id: detect
         shell: bash
         run: |
           set -euo pipefail
           if git ls-remote --exit-code --heads origin df072-clean-jury-private >/dev/null; then
-            echo "PRIVATE_CLEAN_BRANCH_ALREADY_EXISTS; refusing overwrite"
-            exit 2
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+            echo "DF072_CLEAN_BRANCH_EXISTS_NO_OVERWRITE"
+          else
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+            echo "DF072_CLEAN_BRANCH_NOT_STAGED"
           fi
+      - name: Construct and privately test sanitized root
+        if: steps.detect.outputs.needed == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
           mkdir -p "$RUNNER_TEMP/clean-export"
           python -B scripts/df072_build_release_candidate.py --output "$RUNNER_TEMP/clean-export/df072-private.zip"
           python - "$RUNNER_TEMP/clean-export/df072-private.zip" "$RUNNER_TEMP/clean-export/root" <<'PY'
@@ -50,6 +59,7 @@ jobs:
           PY
           ( cd "$RUNNER_TEMP/clean-export/root" && python -B RUN_PUBLIC_TESTS.py && node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs )
       - name: Create private clean-root branch without altering main
+        if: steps.detect.outputs.needed == 'true'
         shell: bash
         run: |
           set -euo pipefail
