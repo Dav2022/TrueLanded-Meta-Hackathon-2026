@@ -1,0 +1,19 @@
+{
+  "release": "DF101_PUBLIC_AV_SUBMISSION",
+  "source": "DF100_COMPACT_FROM_DF099_APPROVED",
+  "video_public_path": "docs/true-landed-df099-demo-1080p.mp4",
+  "video_bytes": 39281002,
+  "video_sha256": "18636fcd6efc4c5554ea1e6ce11c53a03b18ae291942de8641dd3e838e2c9cc4",
+  "video_duration_seconds": 167,
+  "video_resolution": [
+    1920,
+    1080
+  ],
+  "poster_path": "docs/true-landed-demo-poster.jpg",
+  "poster_bytes": 50696,
+  "site": "https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/watch.html",
+  "code_license": "MIT excluding audiovisual",
+  "authorization": "owner explicitly authorized music and voice",
+  "publishing_official_submission": "separate action, not performed by this packaging",
+  "historical_prepublication_manifest": "PREPUBLICATION_MANIFEST.json remains RC4 code-only snapshot"
+}

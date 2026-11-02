@@ -99,7 +99,8 @@ class DF043SiteTests(unittest.TestCase):
     def test_static_site_contains_no_private_pdf_or_historical_replay(self):
         names = sorted(x.name for x in SITE.iterdir() if x.is_file())
         self.assertEqual(names, ["adjudication-data.json", "adjudication.html", "adjudication.js",
-                                 "app.js", "counterfactual.js", "data.json", "index.html", "style.css"])
+                                 "app.js", "counterfactual.js", "data.json", "index.html", "style.css",
+                                 "true-landed-demo-poster.jpg", "true-landed-df099-demo-1080p.mp4", "watch.html"])
 
 
 if __name__ == "__main__":

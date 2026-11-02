@@ -29,9 +29,15 @@ response bodies, provider keys, or copyright-cleared assumptions are included.
 Copyright (c) 2026 David Soto Leon. See [LICENSE](LICENSE). The licence
 permits third-party use, modification and redistribution of these released files.
 It does not license separate pre-existing commercial TrueLanded software,
-confidential project records, the DF-075 film or its source projects. The
+confidential project records, separately authored audiovisual content or its source projects. The
 TrueLanded name and branding are not licensed as trademarks by MIT.
 **Public contest repository:** https://github.com/Dav2022/TrueLanded-Meta-Hackathon-2026
+
+**Watch the 2:47 hackathon film (1080p with English captions):** https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/watch.html
+
+**Judges' submission overview and exact scope:** [SUBMISSION_OVERVIEW.md](SUBMISSION_OVERVIEW.md)
+
+**Audiovisual rights:** Public judging playback authorized by the owner; the film and soundtrack are **not** MIT-licensed. See [AUDIOVISUAL_RIGHTS.md](AUDIOVISUAL_RIGHTS.md).
 
 **Try the interactive evidence demo:** https://dav2022.github.io/TrueLanded-Meta-Hackathon-2026/
 

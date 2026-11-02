@@ -29,8 +29,11 @@ a provider-signed certificate; neither is performed by this website.
 
 Code uses Python standard-library modules and browser APIs. Node's built-in
 test runner is used for optional JavaScript acceptance; no npm packages are
-required for the website or evaluator. Fonts are system fallbacks; no font
-binary, stock image, music or third-party video is distributed here.
+required for the website or evaluator. Fonts are system fallbacks; no font binary or stock image is distributed as code assets.
+A later standalone **film for judges** was added under \`docs/true-landed-df099-demo-1080p.mp4\`.
+It is not part of the MIT-licensed source-code grant; music and voice are included
+under the creator's separate audiovisual exhibition authorization. See
+\`AUDIOVISUAL_RIGHTS.md\`.
 
 File hashes and dates establish byte provenance, not independent proof of
 authorship, absence of derivative work, third-party clearance or contest
