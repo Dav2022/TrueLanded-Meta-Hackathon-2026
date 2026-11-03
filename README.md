@@ -18,7 +18,7 @@ Open `http://127.0.0.1:18973/`; WebCrypto requires a secure context.
 
 Run offline tests: `python -B RUN_PUBLIC_TESTS.py` (Python 3.11+).
 Optional Node 22 adversarial tests:
-`node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs`.
+`node --test tests/test_df071_counterfactual.cjs tests/test_df071_browser_contract.cjs tests/test_df_sec001_adjudication_integrity.cjs`.
 
 Code provenance: isolated competition modules created during the October 2026
 hackathon, with technical project records maintained privately by their owner.
@@ -53,3 +53,5 @@ execute Python. Rebuild with `python -B scripts/df073_build_adjudication.py` and
 verify with `--check`. Historical provider outputs and customer assets are excluded.
 LF checkout rules preserve generated JSON bytes on Windows. A failed source check
 clears the verified-literal metric and disables the hypothetical calculator.
+
+Security maintenance DF-SEC-001: Adjudication Lab verifies the complete pinned SHA-256 of its synthetic precomputed JSON, validates the replay contract and refuses altered data without displaying stale results. This update does not change the 30 historical results, the Meta inference provenance or the audiovisual demo.
